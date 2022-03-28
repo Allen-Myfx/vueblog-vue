@@ -12,10 +12,15 @@ import 'element-plus/dist/index.css'
 // App.use(ElementPlus)
 
 import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+import "./axios.js"
+
+
 
 
 const app = createApp(App).use(ElementPlus).use(store).use(router)
-app.config.globalProperties.axios = axios
-
+    // app.config.globalProperties.axios = axios
+app.use(VueAxios, axios)
 
 app.mount('#app')
