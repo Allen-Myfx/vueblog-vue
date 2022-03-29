@@ -8,8 +8,7 @@
             <h4>
               <router-link :to="{name: 'BlogDetail', params: {blogId: blog.id}}">
                 {{blog.title}}
-              </router-link>
-              
+              </router-link>              
             </h4>
             <p>{{blog.description}}</p>
           </el-card>

@@ -6,22 +6,7 @@ import BlogEdit from '../views/BlogEdit.vue'
 import BlogDetail from '../views/BlogDetail.vue'
 
 const routes = [
-    // {
-    //     path: '/home',
-    //     name: 'home',
-    //     component: HomeView
-    // },
-    // {
-    //     path: '/about',
-    //     name: 'about',
-    //     // route level code-splitting
-    //     // this generates a separate chunk (about.[hash].js) for this route
-    //     // which is lazy-loaded when the route is visited.
-    //     component: () =>
-    //         import ( /* webpackChunkName: "about" */ '../views/About.vue')
-    // },
 
-    // my stuff
     {
         path: '/',
         name: 'Index',
@@ -39,8 +24,11 @@ const routes = [
     },
     {
         path: '/blog/add',
-        name: 'BlogEdit',
-        component: BlogEdit
+        name: 'BlogAdd',
+        component: BlogEdit,
+        meta: {
+            requireAuth: true
+        }
     },
     {
         path: '/blog/:blogId',
@@ -48,9 +36,12 @@ const routes = [
         component: BlogDetail
     },
     {
-        path: '/blogs/:blogId/edit',
+        path: '/blog/:blogId/edit',
         name: 'BlogEdit',
-        component: BlogEdit
+        component: BlogEdit,
+        meta: {
+            requireAuth: true
+        }
     }
 
 ]
